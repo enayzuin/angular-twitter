@@ -1,0 +1,24 @@
+<div class="container color-dark">
+  <div class="col">
+    <p>Faça novas amizades ({{followersCount}})</p>
+  </div>
+  <div class="col">
+
+  </div>
+</div>
+<div class="container color-light">
+  <div class="col">
+    <form>
+      <p class="sm">Digite o twitter e clique em enter pra seguir</p>
+      <input  type="text" class="text" [(ngModel)]="follower" name="first">
+      <input type="button" class="btn" value="Seguir" (click)="followNewPeople()" >
+    </form>
+  </div>
+  <div class="col">
+    <p class="life-container" *ngFor="let f of followers">
+      <a class="life-container" href="http://twitter.com/{{f.screenName}}" target="_blank">{{f.screenName}}</a>
+    </p>
+  </div>
+
+ 
+</div>

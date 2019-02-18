@@ -1,0 +1,38 @@
+<div class="container color-dark">
+  <div class="col">
+    <p>Liste seus seguidores</p>
+  </div>
+  <div class="col">
+
+  </div>
+</div>
+<div class="container color-light">
+  <div class="col">
+    <p class="sm">O botão abaixo vai listar seus seguidores recentes ({{followersCount}})</p>
+    <form>
+      <input type="button" class="btn" value="Followers recentes" (click)="listFollowers()">
+      <input type="button" class="btn" value="Mandar DM" (click)="sendDirectMessage()" *ngIf="this.isButtonVisible">
+    </form>
+  </div>
+  <div class="col">
+    <p class="life-container" *ngFor="let f of followers">
+      <a class="life-container" href="http://twitter.com/{{f.screenName}}" target="_blank">{{f.screenName}}</a>
+    </p>
+  </div>
+
+
+  
+</div>
+
+<div class="my-container">
+  <ng-template #customLoadingTemplate>
+      <div class="custom-class">
+          <h3>
+              Por favor aguarde...
+          </h3>
+      </div>
+  </ng-template>
+<ngx-loading [show]="loading" [config]="{ 
+  backdropBackgroundColour: 'rgba(255,255,255,0.3)', backdropBorderRadius: '10px',
+  primaryColour: '#ffffff', secondaryColour: '#ffffff', tertiaryColour: '#ffffff' }" [template]="customLoadingTemplate"></ngx-loading
+  >
