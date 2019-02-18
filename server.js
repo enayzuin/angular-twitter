@@ -1,4 +1,4 @@
-var port = process.env.PORT || 8000;
-server.listen(port, function() {
-    console.log("App is running on port " + port);
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
 });
